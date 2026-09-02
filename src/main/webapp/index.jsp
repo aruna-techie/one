@@ -1,44 +1,37 @@
------
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexus · modern e‑commerce</title>
-  <!-- Google Fonts (Inter + Poppins) -->
+  <title>Elysian · modern e‑commerce</title>
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (Free) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ----- reset & base ----- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* ----- reset & variables ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #f8faff;
+      --bg: #fcf9f7;
       --surface: #ffffff;
-      --primary: #0b1e33;
-      --accent: #2b7aff;
-      --accent-soft: #eaf1fe;
-      --muted: #5f738c;
-      --border: #e6ecf5;
-      --shadow: 0 12px 32px rgba(0, 20, 40, 0.04);
-      --shadow-hover: 0 24px 48px rgba(0, 20, 40, 0.08);
-      --radius: 16px;
+      --primary: #1e2a3a;
+      --accent: #d4a373;
+      --accent-dark: #b8875a;
+      --accent-soft: #f5ede7;
+      --muted: #6f7a8a;
+      --border: #e8e0da;
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 24px 50px rgba(0, 0, 0, 0.08);
+      --radius: 20px;
+      --radius-sm: 12px;
       --radius-full: 999px;
-      --transition: 0.2s ease;
-      --max-width: 1240px;
+      --transition: 0.25s ease;
+      --max-width: 1280px;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background: var(--bg);
@@ -47,20 +40,9 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    button {
-      border: none;
-      background: none;
-      cursor: pointer;
-      font-family: inherit;
-    }
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    button { border: none; background: none; cursor: pointer; font-family: inherit; }
+    img { max-width: 100%; display: block; }
 
     .container {
       max-width: var(--max-width);
@@ -68,47 +50,48 @@
       padding: 0 24px;
     }
 
-    /* ----- header (soft glass) ----- */
+    /* ----- header (elegant) ----- */
     .header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(255, 252, 250, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-      padding: 12px 0;
+      padding: 14px 0;
     }
 
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 22px;
+      gap: 6px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 24px;
       letter-spacing: -0.3px;
-    }
-    .brand .highlight {
-      color: var(--accent);
     }
     .brand i {
       color: var(--accent);
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+    }
+    .brand .highlight {
+      color: var(--accent);
+      font-style: italic;
     }
 
     .nav-desktop {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       list-style: none;
     }
     .nav-desktop li a {
@@ -121,7 +104,7 @@
     .nav-desktop li a:hover,
     .nav-desktop li a:focus-visible {
       background: var(--accent-soft);
-      color: var(--accent);
+      color: var(--accent-dark);
     }
 
     .header-actions {
@@ -141,7 +124,7 @@
     }
     .search-wrap:focus-within {
       border-color: var(--accent);
-      box-shadow: 0 0 0 4px rgba(43, 122, 255, 0.12);
+      box-shadow: 0 0 0 4px rgba(212, 163, 115, 0.15);
     }
     .search-wrap input {
       border: none;
@@ -161,12 +144,12 @@
       transition: color var(--transition);
     }
     .search-wrap button:hover {
-      color: var(--accent);
+      color: var(--accent-dark);
     }
 
     .icon-btn {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -177,7 +160,7 @@
     }
     .icon-btn:hover {
       background: var(--accent-soft);
-      color: var(--accent);
+      color: var(--accent-dark);
     }
 
     .cart-badge {
@@ -201,7 +184,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 8px rgba(43, 122, 255, 0.3);
+      box-shadow: 0 2px 8px rgba(212, 163, 115, 0.4);
     }
 
     .mobile-toggle {
@@ -225,7 +208,7 @@
     .mobile-menu ul li a {
       display: block;
       padding: 12px 16px;
-      border-radius: 12px;
+      border-radius: var(--radius-sm);
       font-weight: 500;
       transition: background var(--transition);
     }
@@ -233,13 +216,12 @@
       background: var(--accent-soft);
     }
 
-    /* ----- hero (clean, centered) ----- */
+    /* ----- hero (warm, welcoming) ----- */
     .hero {
-      background: linear-gradient(135deg, #0b1e33 0%, #1d3650 100%);
-      color: white;
+      background: linear-gradient(145deg, #f5ede7 0%, #e8ddd4 100%);
       border-radius: 0 0 40px 40px;
       padding: 64px 24px 56px;
-      margin-bottom: 40px;
+      margin-bottom: 44px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -247,11 +229,11 @@
     .hero::after {
       content: '';
       position: absolute;
-      right: -5%;
-      top: -30%;
-      width: 380px;
-      height: 380px;
-      background: radial-gradient(circle, rgba(43, 122, 255, 0.18) 0%, transparent 70%);
+      right: -8%;
+      top: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(212, 163, 115, 0.12) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -262,14 +244,18 @@
       margin: 0 auto;
     }
     .hero h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2.8rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
       letter-spacing: -0.02em;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
+    }
+    .hero h1 span {
+      color: var(--accent-dark);
+      font-style: italic;
     }
     .hero p {
       font-size: 1.1rem;
-      opacity: 0.8;
+      color: var(--muted);
       max-width: 520px;
       margin: 0 auto 28px;
     }
@@ -284,7 +270,7 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 14px 30px;
+      padding: 14px 32px;
       border-radius: var(--radius-full);
       font-weight: 600;
       transition: transform var(--transition), box-shadow var(--transition);
@@ -292,20 +278,19 @@
     .btn-primary {
       background: var(--accent);
       color: white;
-      box-shadow: 0 8px 24px rgba(43, 122, 255, 0.3);
+      box-shadow: 0 8px 24px rgba(212, 163, 115, 0.3);
     }
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(43, 122, 255, 0.35);
+      box-shadow: 0 12px 32px rgba(212, 163, 115, 0.35);
     }
     .btn-outline {
       background: transparent;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      color: white;
+      border: 2px solid var(--accent);
+      color: var(--accent-dark);
     }
     .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(212, 163, 115, 0.06);
     }
 
     /* ----- section titles ----- */
@@ -318,9 +303,9 @@
       margin-bottom: 24px;
     }
     .section-head h2 {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 600;
-      font-size: 1.8rem;
+      font-size: 2rem;
       letter-spacing: -0.02em;
     }
     .section-head .sub {
@@ -328,7 +313,7 @@
       font-weight: 400;
     }
     .section-head .link {
-      color: var(--accent);
+      color: var(--accent-dark);
       font-weight: 600;
       display: flex;
       align-items: center;
@@ -339,17 +324,17 @@
       gap: 10px;
     }
 
-    /* ----- categories (chip style) ----- */
+    /* ----- categories (soft tiles) ----- */
     .cat-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 14px;
+      gap: 16px;
       margin-bottom: 48px;
     }
     .cat-card {
       background: var(--surface);
       border-radius: var(--radius);
-      padding: 20px 12px;
+      padding: 22px 12px;
       text-align: center;
       border: 1px solid var(--border);
       transition: transform var(--transition), box-shadow var(--transition), border var(--transition);
@@ -361,9 +346,9 @@
       border-color: var(--accent);
     }
     .cat-card .icon {
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: var(--accent);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .cat-card h4 {
       font-weight: 600;
@@ -377,7 +362,7 @@
     /* ----- product grid (cards) ----- */
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
       gap: 24px;
       margin-bottom: 48px;
     }
@@ -396,8 +381,8 @@
       box-shadow: var(--shadow-hover);
     }
     .product-card .img-wrap {
-      height: 180px;
-      background: #f2f7fe;
+      height: 190px;
+      background: #f8f4f0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -407,10 +392,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s;
+      transition: transform 0.4s;
     }
     .product-card:hover .img-wrap img {
-      transform: scale(1.03);
+      transform: scale(1.04);
     }
     .product-body {
       padding: 14px 16px 8px;
@@ -441,6 +426,7 @@
     .product-body .price-current {
       font-weight: 700;
       font-size: 1.15rem;
+      color: var(--accent-dark);
     }
     .product-body .price-old {
       color: var(--muted);
@@ -476,7 +462,7 @@
       gap: 8px;
     }
     .btn-add:hover {
-      background: var(--accent);
+      background: var(--accent-dark);
     }
     .btn-wish {
       width: 42px;
@@ -491,10 +477,10 @@
     .btn-wish:hover {
       background: var(--accent-soft);
       border-color: var(--accent);
-      color: var(--accent);
+      color: var(--accent-dark);
     }
 
-    /* ----- deal (horizontal) ----- */
+    /* ----- deal (horizontal, warm) ----- */
     .deal-card {
       display: flex;
       flex-wrap: wrap;
@@ -508,7 +494,7 @@
     .deal-card .deal-img {
       flex: 1 1 240px;
       min-height: 200px;
-      background: #eaf1fe;
+      background: #f5ede7;
     }
     .deal-card .deal-img img {
       width: 100%;
@@ -523,7 +509,7 @@
       justify-content: center;
     }
     .deal-body .badge {
-      background: #ff4d6d;
+      background: #d4a373;
       color: white;
       padding: 4px 16px;
       border-radius: var(--radius-full);
@@ -534,8 +520,8 @@
       margin-bottom: 10px;
     }
     .deal-body h3 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.6rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
       margin-bottom: 2px;
     }
     .deal-body .desc {
@@ -548,6 +534,7 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      color: var(--accent-dark);
     }
     .deal-body .price-big .old {
       font-size: 1rem;
@@ -564,7 +551,7 @@
       background: var(--primary);
       color: white;
       padding: 6px 12px;
-      border-radius: 12px;
+      border-radius: var(--radius-sm);
       min-width: 54px;
       text-align: center;
     }
@@ -626,7 +613,7 @@
       color: var(--muted);
     }
 
-    /* ----- newsletter (soft) ----- */
+    /* ----- newsletter (elegant) ----- */
     .newsletter-block {
       background: var(--primary);
       color: white;
@@ -636,8 +623,8 @@
       margin-bottom: 24px;
     }
     .newsletter-block h3 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.8rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
     }
     .newsletter-block p {
       opacity: 0.7;
@@ -686,7 +673,8 @@
       gap: 32px;
     }
     .footer .brand-small {
-      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
       font-size: 1.2rem;
     }
     .footer .brand-small i {
@@ -745,54 +733,24 @@
 
     /* ----- responsive ----- */
     @media (max-width: 992px) {
-      .nav-desktop {
-        display: none;
-      }
-      .mobile-toggle {
-        display: inline-block;
-      }
-      .search-wrap input {
-        width: 120px;
-      }
+      .nav-desktop { display: none; }
+      .mobile-toggle { display: inline-block; }
+      .search-wrap input { width: 120px; }
     }
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .product-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      }
-      .deal-body {
-        padding: 20px;
-      }
-      .deal-body h3 {
-        font-size: 1.4rem;
-      }
-      .timer .box {
-        min-width: 44px;
-        padding: 4px 8px;
-      }
-      .timer .box span {
-        font-size: 1.2rem;
-      }
+      .hero h1 { font-size: 2.4rem; }
+      .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+      .deal-body { padding: 20px; }
+      .deal-body h3 { font-size: 1.5rem; }
+      .timer .box { min-width: 44px; padding: 4px 8px; }
+      .timer .box span { font-size: 1.2rem; }
     }
     @media (max-width: 480px) {
-      .header-inner {
-        flex-wrap: wrap;
-      }
-      .search-wrap {
-        width: 100%;
-        order: 3;
-      }
-      .search-wrap input {
-        width: 100%;
-      }
-      .hero {
-        padding: 40px 16px;
-      }
-      .cat-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      .header-inner { flex-wrap: wrap; }
+      .search-wrap { width: 100%; order: 3; }
+      .search-wrap input { width: 100%; }
+      .hero { padding: 40px 16px; }
+      .cat-grid { grid-template-columns: repeat(3, 1fr); }
     }
   </style>
 </head>
@@ -804,7 +762,7 @@
         <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
           <i class="fas fa-bars"></i>
         </button>
-        <a href="#" class="brand"><i class="fas fa-store"></i> Nexus<span class="highlight">Shop</span></a>
+        <a href="#" class="brand"><i class="fas fa-leaf"></i> Elysian<span class="highlight">.</span></a>
       </div>
 
       <ul class="nav-desktop">
@@ -844,8 +802,8 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <h1>New Winter Collection</h1>
-      <p>Premium fashion, tech & accessories — curated for you. Limited deals & free shipping.</p>
+      <h1>Discover <span>timeless</span> style</h1>
+      <p>Curated essentials for modern living — from fashion to tech, designed with care.</p>
       <div class="btn-group">
         <button class="btn btn-primary" id="shopNow"><i class="fas fa-arrow-right"></i> Shop Now</button>
         <button class="btn btn-outline" id="exploreDeals">Explore Deals</button>
@@ -858,7 +816,7 @@
     <section id="categories">
       <div class="section-head">
         <h2>Shop by Category</h2>
-        <span class="sub">Browse top categories</span>
+        <span class="sub">Find your vibe</span>
       </div>
       <div class="cat-grid" id="categoriesGrid"></div>
     </section>
@@ -903,7 +861,7 @@
     <section>
       <div class="section-head">
         <h2>Customer Reviews</h2>
-        <span class="sub">What they say</span>
+        <span class="sub">Real stories</span>
       </div>
       <div class="testi-scroll" id="testimonialsContainer"></div>
     </section>
@@ -923,8 +881,8 @@
   <!-- FOOTER -->
   <footer class="container footer">
     <div class="col">
-      <div class="brand-small"><i class="fas fa-store"></i> NexusShop</div>
-      <p>Modern e‑commerce demo with a clean, user‑friendly interface.</p>
+      <div class="brand-small"><i class="fas fa-leaf"></i> Elysian</div>
+      <p>Modern e‑commerce with a warm, curated feel.</p>
       <div class="socials">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -945,7 +903,7 @@
         <a href="#">Contact</a>
       </div>
     </div>
-    <div class="copy">© <span id="year"></span> NexusShop. All rights reserved.</div>
+    <div class="copy">© <span id="year"></span> Elysian. All rights reserved.</div>
   </footer>
 
   <script>
@@ -960,15 +918,15 @@
     ];
 
     const PRODUCTS = [
-      { id: 1, title: 'iPhone 14 Pro Max', price: 1099, oldPrice: 1199, rating: 5, reviews: 128, badge: 'New', img: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=300&q=80', category: 'phones' },
-      { id: 2, title: 'MacBook Pro 14"', price: 1999, rating: 4, reviews: 86, img: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=300&q=80', category: 'laptops' },
-      { id: 3, title: 'Apple Watch Series 8', price: 349, oldPrice: 399, rating: 5, reviews: 214, badge: '-25%', img: 'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=300&q=80', category: 'accessories' },
-      { id: 4, title: 'Nike Air Max 270', price: 150, rating: 4, reviews: 53, img: 'https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=300&q=80', category: 'footwear' },
-      { id: 5, title: 'Sony A7 IV Camera', price: 2499, rating: 5, reviews: 42, img: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=300&q=80', category: 'gadgets' },
-      { id: 6, title: 'Chanel No. 5', price: 120, rating: 5, reviews: 189, img: 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=300&q=80', category: 'accessories' },
-      { id: 7, title: 'Travel Backpack', price: 79, oldPrice: 99, rating: 4, reviews: 67, img: 'https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=300&q=80', category: 'accessories' },
-      { id: 8, title: 'Sony WH-1000XM5', price: 399, rating: 5, reviews: 156, img: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=300&q=80', category: 'gadgets' }
+      { id:1, title:'iPhone 14 Pro Max', price:1099, oldPrice:1199, rating:5, reviews:128, badge:'New', img:'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=300&q=80', category:'phones' },
+      { id:2, title:'MacBook Pro 14"', price:1999, rating:4, reviews:86, img:'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=300&q=80', category:'laptops' },
+      { id:3, title:'Apple Watch Series 8', price:349, oldPrice:399, rating:5, reviews:214, badge:'-25%', img:'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=300&q=80', category:'accessories' },
+      { id:4, title:'Nike Air Max 270', price:150, rating:4, reviews:53, img:'https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=300&q=80', category:'footwear' },
+      { id:5, title:'Sony A7 IV Camera', price:2499, rating:5, reviews:42, img:'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=300&q=80', category:'gadgets' },
+      { id:6, title:'Chanel No. 5', price:120, rating:5, reviews:189, img:'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=300&q=80', category:'accessories' },
+      { id:7, title:'Travel Backpack', price:79, oldPrice:99, rating:4, reviews:67, img:'https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=300&q=80', category:'accessories' },
+      { id:8, title:'Sony WH-1000XM5', price:399, rating:5, reviews:156, img:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=300&q=80', category:'gadgets' }
     ];
 
     const TESTIMONIALS = [
-      { name: 'Ava Martin',
+      { name:'Ava Martin', role:'Verified buyer', text:'Beautiful products and fast delivery. The quality exceeded my expectations!', img:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&
